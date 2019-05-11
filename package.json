@@ -1,0 +1,37 @@
+{
+  "name": "creatella",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start:ios": "concurrently \"npm run backend\" \"npm run serve:ios\"",
+    "serve:ios": "react-native run-ios",
+    "start:android": "concurrently \"npm run backend\" \"npm run serve:android\"",
+    "serve:android": "react-native run-android",
+    "backend": "json-server server/index.js --routes server/routes.json --middlewares server/handle-delay.js server/handle-ads.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "concurrently": "^4.1.0",
+    "cool-ascii-faces": "^1.3.4",
+    "mobx": "^5.9.4",
+    "mobx-state-tree": "^3.14.0",
+    "native-base": "^2.12.1",
+    "react": "16.8.3",
+    "react-native": "0.59.8",
+    "react-native-gesture-handler": "^1.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/runtime": "^7.4.4",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "json-server": "^0.14.2",
+    "metro-react-native-babel-preset": "^0.54.0",
+    "prettier": "^1.17.0",
+    "react-test-renderer": "16.8.3"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
