@@ -2,9 +2,9 @@ import {
   createAppContainer,
   createMaterialTopTabNavigator
 } from "react-navigation";
-import Id from "../components/Id";
-import Price from "../components/Price";
-import Size from "../components/Size";
+import Id from "../screens/Id";
+import Price from "../screens/Price";
+import Size from "../screens/Size";
 
 const MainNavigator = createMaterialTopTabNavigator(
   {

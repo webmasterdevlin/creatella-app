@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { View, Text, Spinner, Card, CardItem } from "native-base";
 import { inject, observer } from "mobx-react";
 import ProductStore from "../stores/ProductStore";
-
-class Size extends Component {
+class Price extends Component {
   async componentDidMount() {
+    // await ProductStore.loadProductsByPrice();
     await this.props.navigation.addListener("didFocus", async () => {
-      await ProductStore.loadProductsBySize();
+      await ProductStore.loadProductsByPrice();
     });
   }
   render() {
@@ -18,12 +18,14 @@ class Size extends Component {
           ProductStore.products.map(p => (
             <Card key={p.id}>
               <CardItem
+                onEndReached
+                onEndReachedThreshold={0.75}
                 style={{
                   display: "flex",
                   justifyContent: "space-around"
                 }}
               >
-                <Text>{p.size}Pixel</Text>
+                <Text>{p.price}</Text>
               </CardItem>
             </Card>
           ))
@@ -33,4 +35,4 @@ class Size extends Component {
     );
   }
 }
-export default inject("ProductStore")(observer(Size));
+export default inject("ProductStore")(observer(Price));

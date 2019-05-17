@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { View, Text, Spinner, Card, CardItem } from "native-base";
 import ProductStore from "../stores/ProductStore";
 import { inject, observer } from "mobx-react";
-import Advertisement from "./Advertisement";
+import Advertisement from "../components/Advertisement";
 
 class Id extends Component {
   async componentDidMount() {
